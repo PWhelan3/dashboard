@@ -23,10 +23,10 @@ const Topbar = () => {
         {/* SEARCH BAR */}
         <Box display="flex" backgroundColor={colors.primary[400]} borderRadius="3px">
             <InputBase sx={{ ml: 2, flex: 1}} placeholder="Search" />
-        </Box>
         <IconButton type="button" sx={{ p: 1}}>
             <SearchIcon />
         </IconButton>
+        </Box>
         {/* Icons */}
         <Box display="flex">
             <IconButton onClick={colorMode.toggleColorMode}>
