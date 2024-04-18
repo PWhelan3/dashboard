@@ -3,7 +3,7 @@ import { createTheme } from "@mui/material/styles";
 
 // colour design tokens
 export const tokens = (mode) => ({
-    ...createContext(mode === "dark"
+    ...(mode === "dark"
     ? {
         grey: {
             100: "#e0e0e0",
@@ -77,7 +77,7 @@ export const tokens = (mode) => ({
             100: "#040509",
             200: "#080b12",
             300: "#0c101b",
-            400: "#101624",
+            400: "#f2f0f0",
             500: "#141b2d",
             600: "#434957",
             700: "#727681",
@@ -117,8 +117,7 @@ export const tokens = (mode) => ({
             800: "#c3c6fd",
             900: "#e1e2fe",
         },
-    }
-    ),
+    }),
 });
 
 
@@ -127,10 +126,45 @@ export const tokens = (mode) => ({
 export const themeSettings = (mode) => {
     const colors = tokens(mode);
 
+    // const fallbackColors = {
+    //     primary: {
+    //         main: mode === 'dark' ? colors.primary[500] : colors.primary[100],
+    //     },
+    //     secondary: {
+    //         main: colors.greenAccent[500],
+    //     },
+    //     neutral: {
+    //         dark: colors.grey[700],
+    //         main: colors.grey[500],
+    //         light: colors.grey[100]
+    //     },
+    //     background: {
+    //         default: mode === 'dark' ? colors.primary[500] : "#fcfcfc",
+    //     },
+    // };
+
     return {
         palette: {
             mode: mode,
-            ...colors(mode === 'dark'
+            ...(mode === 'dark'
+    //         ? {
+    //             primary: {
+    //                 main: colors.primary?.[500] || fallbackColors.primary.main,
+    //             },
+    //             secondary: {
+    //                 main: colors.greenAccent?.[500] || fallbackColors.secondary.main,
+    //             },
+    //             neutral: {
+    //                 dark: colors.grey?.[700] || fallbackColors.neutral.dark,
+    //                 main: colors.grey?.[500] || fallbackColors.neutral.main,
+    //                 light: colors.grey?.[100] || fallbackColors.neutral.light,
+    //             },
+    //             background: {
+    //                 default: colors.primary?.[500] || fallbackColors.background.default,
+    //             }
+    //         }
+    //         : fallbackColors),
+    // },
             ? {
                 primary: {
                     main: colors.primary[500],
